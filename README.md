@@ -21,7 +21,8 @@ dotnet add package Microsoft.NET.Sdk.Functions --version 1.0.23
 # Azure
 1. Sign up for Azure Functions (you need an active Azure Functions subscription)
 2. Install Azure Functions Core Tools: npm install -g azure-functions-core-tools@core
-3. Set up Azure Credentials: https://serverless.com/framework/docs/providers/azure/guide/credentials/
+3. Install Azure CLI: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
+4. Set up Azure Credentials: https://serverless.com/framework/docs/providers/azure/guide/credentials/
     Note that the Client ID is the "name" attribute (ex "http://azure-cli-2018...")
-4. az webapp config appsettings set --name AgnosticHello --resource-group AgnosticHello-rg --settings FUNCTIONS_WORKER_RUNTIME=dotnet
-5. ./build.cmd azure
+5. az webapp config appsettings set --name AgnosticHello --resource-group AgnosticHello-rg --settings FUNCTIONS_WORKER_RUNTIME=dotnet
+6. ./build.cmd azure
