@@ -5,9 +5,11 @@ Working deployment targets:
 - Azure Functions
 
 # Setup
+- Install .NET SDK: https://www.microsoft.com/net/download
+- dotnet add package Microsoft.NET.Sdk.Functions --version 1.0.23
 - Install npm: https://www.npmjs.com/get-npm
 - npm install -g serverless
-- dotnet add package Microsoft.NET.Sdk.Functions --version 1.0.23
+
 
 # AWS Lambda
 - Sign up for Amazon AWS
