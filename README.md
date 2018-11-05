@@ -1,8 +1,8 @@
 This is an example of creating a platform agnostic serverless function. 
 
 Working deployment targets:
-AWS Lambda
-Azure Functions
+- AWS Lambda
+- Azure Functions
 
 # Setup
 Install npm: https://www.npmjs.com/get-npm
