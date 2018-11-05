@@ -4,12 +4,12 @@ Working deployment targets:
 AWS Lambda
 Azure Functions
 
-#Setup
+# Setup
 Install npm: https://www.npmjs.com/get-npm
 npm install -g serverless
 dotnet add package Microsoft.NET.Sdk.Functions --version 1.0.23
 
-#Amazon
+# Amazon
 1. Sign up for Amazon AWS
 2. Install AWS CLI: https://docs.aws.amazon.com/cli/latest/userguide/installing.html
 3. Set up AWS Credentials: https://serverless.com/framework/docs/providers/aws/guide/credentials/
@@ -18,7 +18,7 @@ dotnet add package Microsoft.NET.Sdk.Functions --version 1.0.23
 6. serverless invoke -f hello
 7. serverless logs --function hello
 
-#Azure
+# Azure
 1. Sign up for Azure Functions (you need an active Azure Functions subscription)
 2. Install Azure Functions Core Tools: npm install -g azure-functions-core-tools@core
 3. Set up Azure Credentials: https://serverless.com/framework/docs/providers/azure/guide/credentials/
