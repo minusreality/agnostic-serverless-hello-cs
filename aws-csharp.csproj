@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Common -->
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <AssemblyName>CsharpHandlers</AssemblyName>
+    <PackageId>aws-csharp</PackageId>    
+  </PropertyGroup>
+
+  <!-- Unable to be conditional during build -->
+  <ItemGroup>
+    <DotNetCliToolReference Include="Amazon.Lambda.Tools" Version="2.2.0" />
+  </ItemGroup>
+
+  <!-- AWS -->  
+  <PropertyGroup Condition=" '$(Provider)' == 'aws' ">
+    <DefineConstants>PROVIDER_AWS</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Provider)' == 'aws' ">
+    <PackageReference Include="Amazon.Lambda.Core" Version="1.0.0" />
+    <PackageReference Include="Amazon.Lambda.Serialization.Json" Version="1.3.0" />
+  </ItemGroup>
+
+  <!-- Azure -->
+  <PropertyGroup Condition=" '$(Provider)' == 'azure' ">
+    <NoWarn>NU1605</NoWarn>
+    <DefineConstants>PROVIDER_AZURE</DefineConstants>
+    <AzureFunctionsVersion>v2</AzureFunctionsVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(Provider)' == 'azure' ">
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.23" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Provider)' == 'azure' ">
+    <None Update="host.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="local.settings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Provider)' == 'azure' ">
+    <PackageReference Include="Microsoft.Azure.WebJobs.Script.ExtensionsMetadataGenerator" Version="1.0.1" />
+  </ItemGroup>
+
+</Project>
+
