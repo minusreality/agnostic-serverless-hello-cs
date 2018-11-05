@@ -1,4 +1,4 @@
-This is an example of creating a platform agnostic serverless function. 
+This is an example of creating a platform agnostic serverless function. The instructions below are meant to be performed in the CLI on your platform and not necessarily in visual studio.
 
 Working deployment targets:
 - AWS Lambda
