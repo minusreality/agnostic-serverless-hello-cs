@@ -24,7 +24,6 @@ Working deployment targets:
 - Sign up for Azure Functions (you need an active Azure Functions subscription)
 - Install Azure Functions Core Tools: npm install -g azure-functions-core-tools@core
 - Install Azure CLI: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
-- az login
 - Set up Azure Credentials: https://serverless.com/framework/docs/providers/azure/guide/credentials/
     Note that the Client ID is the "name" attribute (ex "http://azure-cli-2018...")
 - az webapp config appsettings set --name AgnosticHello --resource-group AgnosticHello-rg --settings FUNCTIONS_WORKER_RUNTIME=dotnet
