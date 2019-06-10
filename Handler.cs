@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json;
 
 // AWS
 #if PROVIDER_AWS
@@ -15,7 +16,7 @@ using System;
   using Microsoft.AspNetCore.Http;
   using Microsoft.Azure.WebJobs.Host;
   using Microsoft.Extensions.Logging;
-  using Newtonsoft.Json;
+  //using Newtonsoft.Json;
 #endif 
 
 namespace AgnosticHello
@@ -35,19 +36,27 @@ namespace AgnosticHello
         }
     }
 
-    
-    #if PROVIDER_AWS
+
+#if PROVIDER_AWS
       public class Handler
       {
-        public string Hello(Request request)
+        public Response Hello(Request request)
         {
             AgnosticRequest ar = new AgnosticRequest();
-            return ar.Process(request);
+            Response response = new Response();
+            response.statusCode = 200;
+            response.body = ar.Process(request);
+            return response;
+        }
+
+        public class Response {
+            public int statusCode { get; set; }
+            public string body { get; set; }
         }
       }
-    #endif
+#endif
 
-    #if PROVIDER_AZURE
+#if PROVIDER_AZURE
       public static class Handler
       {
           [FunctionName("Hello")]
@@ -73,5 +82,5 @@ namespace AgnosticHello
               return new OkObjectResult(ar.Process(request));
           }
       }
-    #endif 
-  }
+#endif
+}
