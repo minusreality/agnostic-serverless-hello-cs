@@ -17,5 +17,9 @@ then
 fi
 if [$1 = "azure"]
 then
-  func azure functionapp publish AgnosticHello --dotnet-cli-params /p:Provider=azure
+  # func azure functionapp publish AgnosticHello --dotnet-cli-params /p:Provider=azure
+  dotnet lambda package --configuration release --framework netcoreapp2.1 --output-package bin/release/netcoreapp2.1/deploy-package.zip /p:Provider=azure
+  # serverless deploy --config serverless.azure.yml -v
+  cp serverless.azure.yml serverless.yml
+  serverless deploy -v
 fi
