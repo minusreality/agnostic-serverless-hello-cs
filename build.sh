@@ -11,6 +11,8 @@ dotnet restore
 if [$1 = "aws"]
 then
   dotnet lambda package --configuration release --framework netcoreapp2.1 --output-package bin/release/netcoreapp2.1/deploy-package.zip /p:Provider=aws
+  # serverless deploy --config serverless.aws.yml -v
+  cp serverless.aws.yml serverless.yml
   serverless deploy -v
 fi
 if [$1 = "azure"]

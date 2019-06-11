@@ -41,7 +41,7 @@ package:
   exclude:
     - env.bat
     - .gitignore
-    #- package.json
+    - package.json
     - .git/**
 
 functions:

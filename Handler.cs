@@ -16,7 +16,6 @@ using Newtonsoft.Json;
   using Microsoft.AspNetCore.Http;
   using Microsoft.Azure.WebJobs.Host;
   using Microsoft.Extensions.Logging;
-  //using Newtonsoft.Json;
 #endif 
 
 namespace AgnosticHello
@@ -83,4 +82,5 @@ namespace AgnosticHello
           }
       }
 #endif
+
 }

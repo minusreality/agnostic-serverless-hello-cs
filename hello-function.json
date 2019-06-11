@@ -10,9 +10,9 @@
         {
             "type": "http",
             "direction": "out",
-            "name": "res"
+            "name": "$return"
         }
     ],
-    "entryPoint": "Handler::Hello",
-    "scriptFile": "CsharpHandlers::AgnosticHello.js"
+    "entryPoint": "Function1::Run",
+    "scriptFile": "CsharpHandlers::FunctionAppHelloWorld.js"
 }
