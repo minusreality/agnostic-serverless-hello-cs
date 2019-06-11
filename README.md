@@ -25,11 +25,8 @@ Working deployment targets:
 - Install Azure CLI: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest
 - Set up Azure Credentials: https://serverless.com/framework/docs/providers/azure/guide/credentials/
     Note that the Client ID is the "name" attribute (ex "http://azure-cli-2018...")
-- dotnet tool install -g Amazon.Lambda.Tools
+- (skip) dotnet tool install -g Amazon.Lambda.Tools
 - (skip) npm i --save serverless-azure-functions (not currently functioning see open bug: https://github.com/serverless/serverless-azure-functions/issues/45)
-- ./build.cmd azure
-
-
 - az group create --name AgnosticHello-rg --location "Central US"
 - az storage account create --name agnostichellostorage --location centralus --resource-group AgnosticHello-rg --sku Standard_LRS
 - az functionapp create --resource-group AgnosticHello-rg --consumption-plan-location centralus --name AgnosticHello --storage-account agnostichellostorage --runtime dotnet
